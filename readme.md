@@ -18,6 +18,13 @@ dotnet run --project .\src\Payments\Payments.csproj
 dotnet run --project .\src\Reporting\Reporting.csproj
 ```
 
+## Overview
+
+This is what is happening
+
+![Shop demo with MassTransit](shop-demo.gif "Shop demo with MassTransit")
+
+
 ## Notice I can't code?
 
 1. Fork
