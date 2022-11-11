@@ -5,13 +5,10 @@ using Reporting;
 
 
 var reportStore = new ReportStore();
-var bus = Bus.Factory.CreateUsingRabbitMq(sbc =>
+var bus = Bus.Factory.CreateUsingAzureServiceBus(sbc =>
 {
-    sbc.Host(new Uri("rabbitmq://localhost"), h =>
-    {
-        h.Username("guest");
-        h.Password("guest");
-    });
+    sbc.Host("Endpoint=sb://tech-team-town-hall.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=48szyoAkRYCNwLxIzPbprxPr+2xoZn/OlZnsrU8TMVI=");
+
 
     sbc.ReceiveEndpoint("Reporting", ep =>
     {
